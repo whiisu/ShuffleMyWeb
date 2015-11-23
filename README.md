@@ -4,6 +4,12 @@ java kursuse projekt
 Eesmärk on luua programm, mis salvestab sinna sisestatud veebiaadresse
 ning võimaldab neid avada programmi poolt pakutud suvalises järjekorras.
 
+-------------------------------------
+23.11.2015
+-------------------------------------
+Kaia regas oma repository Kristeri küsitluses
+Hetkel on kaustas gitignore, readme ja programmi avaaken
+
 
 -------------------------------------
 22.11.2015
