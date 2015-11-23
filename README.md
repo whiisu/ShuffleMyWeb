@@ -57,3 +57,10 @@ Paik: Antalya   Osalejad: Kaia Ernits, Andres Kostiv
 
 Teemad:
 Olemasolevate andmete projekti gitti forkimine ja laadimine
+
+
+22.11.2015
+-------------------------------------
+Paik: EIK     Osalejad: Kaia Ernits, Andres Kostiv
+
+Otsustasime projektist esmalt kumbki oma versiooni progeda kokkulepitud algoritmi järgi
