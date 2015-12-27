@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class Algus extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        //kasutatud allikas KristerV/javaHarjutused/logisisse
+        // ** kasutatud allikas KristerV/javaHarjutused/logisisse
         VBox avaAken = new VBox();
         Scene lava = new Scene(avaAken, 400, 300);
         primaryStage.setScene(lava);
