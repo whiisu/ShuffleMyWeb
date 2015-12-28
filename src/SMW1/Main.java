@@ -11,7 +11,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         new GoWindow();
 
-
+        // this class is to start the program, it moves on to GoWindow class
     }
 
 }

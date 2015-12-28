@@ -16,16 +16,16 @@ public class GoWindow { // based on kristerv SQL_Login exercise
     Stage stage = new Stage();
 
     GoWindow(){
-        setupScene();
-        setupGo();
-        setupSettings();
+        setupScene(); // UI description
+        setupGo(); // door to next window, where you can chose your web page
+        setupSettings(); // door to settings window, where you can add or delete web pages
     }
 
     private void setupScene() {
         VBox vBox = new VBox();
         Scene scene = new Scene(vBox);
 
-        intro = new Text("This program proposes your favourite web pages in random order.");
+        intro = new Text("This program suggests your favourite web pages in random order.");
         goButton = new Button("GO");
         settingsButton = new Button("Settings");
         vBox.getChildren().addAll(intro, goButton, settingsButton);
@@ -35,11 +35,16 @@ public class GoWindow { // based on kristerv SQL_Login exercise
     }
 
     private void setupGo() {
-        //goButton.setOnAction();
-
+        goButton.setOnAction(event -> {
+            new BrowserWindow();
+            stage.close(); //closes GoWindow
+        });
     }
-
     private void setupSettings() {
+        settingsButton.setOnAction(event -> {
+            new SettingsWindow();
+            stage.close(); //closes GoWindow
+        });
 
     }
 
