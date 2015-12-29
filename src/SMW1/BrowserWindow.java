@@ -39,6 +39,7 @@ public class BrowserWindow {
 
     private void SetupBrowser() {
         browserButton.setOnAction(event -> {
+            // finds random homepage from database
             //new OpenWebPage(); //opens web page in browser
         });
     }
