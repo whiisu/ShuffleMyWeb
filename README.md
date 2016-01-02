@@ -26,6 +26,9 @@ Peale programmi käivitamist saad valida, kas:
 
 Programmist väljumiseks vajuta punast ristikest.
 
+
+ARENDUS:
+
 -------------------------------------
 23.11.2015
 -------------------------------------
@@ -38,7 +41,7 @@ Hetkel on kaustas gitignore, readme ja programmi avaaken
 -------------------------------------
 Paik: EIK     Osalejad: Kaia Ernits, Andres Kostiv
 
-Otsustasime kogu projektist esmalt kumbki oma versiooni progeda.
+Otsustasime kogu projektist kumbki oma versiooni progeda.
 
 
 ------------------------------------
