@@ -1,8 +1,30 @@
 # ShuffleMyWeb
 I200 kursuse projekt
 
+KIRJELDUS:
+
 Eesmärk on luua programm, mis salvestab sinna sisestatud veebiaadresse
 ning võimaldab neid avada programmi poolt pakutud suvalises järjekorras.
+
+KASUTUSJUHEND:
+
+Peale programmi käivitamist saad valida, kas:
+"GO" lähed veebilehti avama  või
+"Settings" uusi lisama/ olemasolevaid kustutama.
+
+"Go" nupu all avanev programm pakub sulle juba andmebaasis olemasolevat suvalist veebiaadressi.
+ Klikkides sellel veebiaadressil avaneb see URL veebibrowseris.
+ Juhul kui pakutav veebileht ei huvit sind hetkel, saad küsida uue veebiaadressi vajutades nupule "Next page".
+ Nupp "Back to Start" viib su tagasi programmi esilehele.
+
+ "Settings" nupu all avanev aken võimaldab sul:
+ "Add Page" nupuga lisada andmebaasi uusi sisestatud veebilehti.
+ "Delete Page" nupuga kustutada valitud veebileht andmebaasist.
+ "Cancel all changes" nupuga tühistad selles aknas tehtud muudatused.
+ "Save all changes" nupuga viid muudatused andmebaasis sisse.
+ Nupp "Back to Start" viib su tagasi programmi esilehele.
+
+Programmist väljumiseks vajuta punast ristikest.
 
 -------------------------------------
 23.11.2015
