@@ -1,5 +1,6 @@
 package SMW1;
 
+
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -26,11 +27,12 @@ public class BrowserWindow {
         VBox vBox = new VBox();
         Scene scene = new Scene(vBox);
 
-        // Siin peaks interaktiivne veebiaadress olema, mis võetakse randomiga andmebaasist
-        browserButton = new Button("www.eesti.ee");
-        // See nupuvajutus annab uue väärtuse browserButtonile, random Database
+        // Siin peaks interaktiivne veebiaadress olema, mis vÃµetakse randomiga andmebaasist
+        browserButton = new Button();
+
+        // See nupuvajutus annab uue vÃ¤Ã¤rtuse browserButtonile, random Database
         nextWebPageButton = new Button("Next page");
-        backButton = new Button("Back to Start"); // läheb tagasi eelmisele lehele
+        backButton = new Button("Back to Start"); // lÃ¤heb tagasi eelmisele lehele
         vBox.getChildren().addAll(browserButton, nextWebPageButton, backButton);
 
         stage.setScene(scene);
@@ -38,7 +40,7 @@ public class BrowserWindow {
     }
 
     private void SetupBrowser() {
-        browserButton.setOnAction(event -> {
+        browserButton.setOnAction(event -> { //PrposedURL
             // finds random homepage from database
             //new OpenWebPage(); //opens web page in browser
         });

@@ -64,6 +64,7 @@ public class SettingsWindow {
     }
 
     private void AddPage() {
+        //võtab newWebPage väljalt ULR-i ja salvestab selle andmebaasi stagingalale
 
     }
 
