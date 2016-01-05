@@ -28,7 +28,7 @@ public class BrowserWindow {
         Scene scene = new Scene(vBox);
 
         // Siin peaks interaktiivne veebiaadress olema, mis võetakse randomiga andmebaasist
-        browserButton = new Button("ProposeURL");
+        browserButton = new Button("Open the page");
 
         // See nupuvajutus annab uue väärtuse browserButtonile, random Database
         nextWebPageButton = new Button("Next page");
@@ -42,7 +42,7 @@ public class BrowserWindow {
     private void SetupBrowser() {
         browserButton.setOnAction(event -> { //PrposedURL
             ProposeURL propose = new ProposeURL();  //opens random web page in browser
-            browserButton = new Button(propose.toString());
+
 
         });
     }
