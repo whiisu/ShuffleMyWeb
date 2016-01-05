@@ -18,8 +18,6 @@ public class SettingsWindow {
     TextField newWebPage;
     Button addPage;
     Button deletePage;
-    Button cancelChanges;
-    Button saveChanges;
     Button backButton;
     Stage stage = new Stage();
 
@@ -28,8 +26,6 @@ public class SettingsWindow {
         SetupTop100(); // List of all web pages
         DeletePage(); // deletes chosen page
         AddPage(); // stores new page to database
-        CancelChangesInStagingArea(); //cancel changes
-        SaveChangesInStagingArea(); // save changes
         SetupBackToStart(); //back to GoWindow, closes SettingsWindow
 
     }
@@ -44,11 +40,9 @@ public class SettingsWindow {
         newWebPage = new TextField();
         addPage = new Button("Add Page");
         deletePage = new Button("Delete Page");
-        cancelChanges = new Button("Cancel all changes");
-        saveChanges = new Button("Save all changes");
         backButton = new Button("Back to Start");
         vBox.getChildren().addAll(heading, label, top100, newWebPage, addPage,
-                deletePage, cancelChanges, saveChanges, backButton);
+                deletePage, backButton);
 
         stage.setScene(scene);
         stage.show();
@@ -67,20 +61,13 @@ public class SettingsWindow {
         addPage.setOnAction(event -> {
             String newURL = newWebPage.getText();
             Database database = new Database();
-            //database.registerNewURL(newURL);
-            //database.closeConnection();
+            database.registerNewURL(newURL);
+            database.closeConnection();
         });
-        //võtab newWebPage väljalt ULR-i ja salvestab selle andmebaasi stagingalale
+        //võtab newWebPage väljalt ULR-i ja salvestab selle andmebaasi
 
     }
 
-    private void CancelChangesInStagingArea() {
-
-    }
-
-    private void SaveChangesInStagingArea() {
-
-    }
 
     private void SetupBackToStart() {
         backButton.setOnAction(event -> {
