@@ -2,15 +2,14 @@ package SMW1;
 
 import javafx.scene.Node;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * Created by Kaia on 5.01.2016.
  */
 public class Database {
     Connection connection = null;
+    Statement statement = null;
     private Node data;
 
     public Database(){  // konstruktor
@@ -43,6 +42,28 @@ public class Database {
         String sql = "INSERT INTO USERS(URL) VALUES ('\"+url+\\')";
         updateDatabase(sql);
     }
+    public void randomURL() {
+        String randomURL;
+        try {
+            createConnection();
+            connection.setAutoCommit(false);
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT URL FROM DATABASE ORDER BY RANDOM() LIMIT 1;");
+
+            while (resultSet.next()){
+                String url = resultSet.getString("url");
+                randomURL = url;
+            }
+            resultSet.close();
+            statement.close();
+            connection.close();
+        }catch (Exception e){
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+        }
+
+    }
+
+
     public void closeConnection() { //sulgen andmebaasiühenduse
         try {
             connection.close();
@@ -55,4 +76,6 @@ public class Database {
 
         return data;
     }
+
+
 }

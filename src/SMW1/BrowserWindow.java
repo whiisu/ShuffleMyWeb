@@ -47,6 +47,10 @@ public class BrowserWindow {
 
     private void SetupNextWebPage() {
         nextWebPageButton.setOnAction(event -> {
+            Database database = new Database();
+            database.randomURL();
+
+
             // goes to database and picks random page which will show in browserButton
         });
     }
