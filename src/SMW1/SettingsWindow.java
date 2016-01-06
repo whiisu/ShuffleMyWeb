@@ -27,7 +27,6 @@ public class SettingsWindow {
         DeletePage(); // deletes chosen page
         AddPage(); // stores new page to database
         SetupBackToStart(); //back to GoWindow, closes SettingsWindow
-
     }
 
     private void SetupScene3() {
@@ -50,6 +49,11 @@ public class SettingsWindow {
     }
 
     private void SetupTop100() {
+        Database database = new Database();
+        top100.setContent(database.getData());
+
+
+
 
     }
 
@@ -68,7 +72,6 @@ public class SettingsWindow {
 
     }
 
-
     private void SetupBackToStart() {
         backButton.setOnAction(event -> {
             new GoWindow();
@@ -76,6 +79,5 @@ public class SettingsWindow {
         });
 
     }
-
 
 }

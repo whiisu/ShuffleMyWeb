@@ -1,5 +1,7 @@
 package SMW1;
 
+import javafx.scene.Node;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,6 +11,7 @@ import java.sql.SQLException;
  */
 public class Database {
     Connection connection = null;
+    private Node data;
 
     public Database(){  // konstruktor
         createConnection(); //andmebaasiga ühenduse loomiseks
@@ -23,7 +26,6 @@ public class Database {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         }
     }
-
     private void createTable() { //loon tabeli kahe tulbaga, kus hoitakse ID numbrit ja URL aadressi
         String sql = "CREATE TABLE IF NOT EXISTS USERS (ID INT AUTO_INCREMENT, URL TEXT);";
         updateDatabase(sql);
@@ -47,5 +49,10 @@ public class Database {
         }catch (SQLException e){
             e.printStackTrace();
         }
+    }
+
+    public Node getData() {
+
+        return data;
     }
 }
