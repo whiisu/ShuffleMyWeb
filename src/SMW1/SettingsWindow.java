@@ -63,9 +63,9 @@ public class SettingsWindow {
 
     private void AddPage() {
         addPage.setOnAction(event -> {
-            String newURL = newWebPage.getText();
+            String url = newWebPage.getText();
             Database database = new Database();
-            database.registerNewURL(newURL);
+            database.registerNewURL(url);
             database.closeConnection();
         });
         //võtab newWebPage väljalt ULR-i ja salvestab selle andmebaasi

@@ -1,16 +1,14 @@
-package SMW1;
-
-import javafx.scene.Node;
+package SMW2;
 
 import java.sql.*;
+import java.util.HashMap;
 
 /**
- * Created by Kaia on 5.01.2016.
+ * Created by Kaia on 8.01.2016.
  */
 public class Database {
     Connection connection = null;
     Statement statement = null;
-    private Node data;
 
     public Database(){  // konstruktor
         createConnection(); //andmebaasiga ühenduse loomiseks
@@ -30,35 +28,38 @@ public class Database {
         updateDatabase(sql);
     }
     public void registerNewURL(String url) {
-        String sql = "INSERT INTO DATABASE (URL) VALUES ('"+url+"')";
+        String sql = "INSERT INTO DATABASE (URL) VALUES ('"+url+"');";
         updateDatabase(sql);
     }
     private void updateDatabase(String sql) {
         try {
-            Statement statement = connection.createStatement();
+            java.sql.Statement statement = connection.createStatement();
             statement.executeUpdate(sql);
             statement.close();
         }catch (SQLException e){
             e.printStackTrace();
         }
     }
-    public String randomURL(String randomURL) {
+    public String randomURL(String urldata) {
         try {
             createConnection();
             connection.setAutoCommit(false);
             statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT URL FROM DATABASE ORDER BY RANDOM() LIMIT 1;");
+            String sql = "SELECT URL FROM DATABASE ORDER BY RANDOM() LIMIT 1;";
+            ResultSet resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()){
-                randomURL = resultSet.getString("url");
+                urldata = resultSet.getString("url");
             }
             resultSet.close();
             statement.close();
             connection.close();
+            return urldata;
         }catch (Exception e){
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            e.printStackTrace();
+            System.exit(0);
         }
-        return randomURL;
+        return urldata;
     }
 
 
@@ -70,10 +71,20 @@ public class Database {
         }
     }
 
-    public Node getData() {
-
-        return data;
+    public HashMap<String, String> getURL(String url) {
+        HashMap<String, String> urldata = new HashMap<String, String>();
+        try{
+            Statement statement = connection.createStatement();
+            String sql = "SELECT URL FROM DATABASE ORDER BY RANDOM() LIMIT 1;";
+            ResultSet resultSet = statement.executeQuery(sql);
+            urldata.put("url", resultSet.getString("url"));
+            resultSet.close();
+            statement.close();
+            return urldata;
+        }catch (SQLException e){
+            e.printStackTrace();
+            System.exit(0);
+        }
+        return urldata;
     }
-
-
 }
