@@ -14,6 +14,7 @@ import javafx.stage.Stage;
  */
 public class SettingsWindow {
     Text heading;
+    Label label;
     ScrollPane top100;
     TextField newWebPage;
     Button addPage;
@@ -22,10 +23,10 @@ public class SettingsWindow {
     Stage stage = new Stage();
 
     SettingsWindow(){
-        SetupScene3(); //UI description
-        SetupTop100(); // List of all web pages
-        DeletePage(); // deletes chosen page
-        AddPage(); // stores new page to database
+        SetupScene3();  //UI description
+        SetupTop100();  // List of all web pages
+        DeletePage();   // deletes chosen page
+        AddPage();      // stores new page to database
         SetupBackToStart(); //back to GoWindow, closes SettingsWindow
     }
 
@@ -34,7 +35,9 @@ public class SettingsWindow {
         Scene scene = new Scene(vBox);
 
         heading = new Text("Settings");
-        Label label = new Label("My web pages, max 100");
+        //Database database = new Database();
+        //int num = database.rowNumber();        //need to count number of web pages TODO
+        label = new Label("Status: " + 12 + " web pages");
         top100 = new ScrollPane();
         newWebPage = new TextField();
         addPage = new Button("Add Page");
@@ -57,7 +60,7 @@ public class SettingsWindow {
 
     }
 
-    private void DeletePage() {
+    private void DeletePage() { // meed to SetupTop100 first, TODO
 
     }
 
@@ -66,9 +69,11 @@ public class SettingsWindow {
             String url = newWebPage.getText();
             Database database = new Database();
             database.registerNewURL(url);
+            //database.rowNumber();
             database.closeConnection();
         });
         //võtab newWebPage väljalt ULR-i ja salvestab selle andmebaasi
+        // uuendab olemasolevate lehekülgede arvu ka
 
     }
 

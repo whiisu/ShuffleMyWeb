@@ -28,18 +28,22 @@ public class Database {
         updateDatabase(sql);
     }
     public void registerNewURL(String url) {
+        // esmalt kontrolli, kas sellist aadressi pole juba ees! TODO
         String sql = "INSERT INTO DATABASE (URL) VALUES ('"+url+"');";
         updateDatabase(sql);
+        System.out.println("New url successfully added!");
     }
     private void updateDatabase(String sql) {
         try {
-            java.sql.Statement statement = connection.createStatement();
+            statement = connection.createStatement();
             statement.executeUpdate(sql);
             statement.close();
         }catch (SQLException e){
             e.printStackTrace();
         }
     }
+
+
     public String randomURL(String urldata) {
         try {
             createConnection();
@@ -61,14 +65,28 @@ public class Database {
         }
         return urldata;
     }
+    public int rowNumber (){
+        // based on http://stackoverflow.com/questions/13103067/correct-way-to-find-rowcount-in-java-jdbc
+        try{
+            statement = connection.createStatement();
+            ResultSet r = statement.executeQuery("SELECT COUNT (*) AS rowcount FROM DATABASE");
+            r.next();
+            int num = r.getInt("rowcount");
+            return num;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return rowNumber();
+    }
 
 
-    public void closeConnection() { //sulgen andmebaasiühenduse
+    public void closeConnection() { //closing database connection
         try {
             connection.close();
         }catch (SQLException e){
             e.printStackTrace();
         }
+        System.out.println("database connection closed");
     }
 
     public HashMap<String, String> getURL(String url) {

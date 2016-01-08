@@ -2,6 +2,7 @@ package SMW2;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -16,7 +17,7 @@ import java.net.URISyntaxException;
  */
 public class BrowserWindow {
     Text intro2;
-    Text webPage;
+    TextField webPage;
     Button browserButton;
     Button nextWebPageButton;
     Button backButton;
@@ -35,7 +36,7 @@ public class BrowserWindow {
         intro2 = new Text("Suggested web page to open");
         // Siin peaks interaktiivne veebiaadress olema, mis võetakse randomiga andmebaasist
         String firstURL = "http://www.github.com/whiisu";
-        webPage = new Text(firstURL);
+        webPage = new TextField(firstURL);
         browserButton = new Button("Open the page"); //avab selle veebiaadressi, mis kuvatakse
         nextWebPageButton = new Button("Next page"); // See nupuvajutus annab uue väärtuse browserButtonile ja URL kuvaväljale, random Database
         backButton = new Button("Back to Start"); // läheb tagasi eelmisele lehele
@@ -61,7 +62,7 @@ public class BrowserWindow {
         nextWebPageButton.setOnAction(event -> {
             String url = "";
             Database database = new Database();
-            webPage = new Text(database.randomURL(url));
+            webPage = new TextField(database.randomURL(url));
             //webPage = new Text(urldata);
             // goes to database and picks random page which will show in webPage field
         });
