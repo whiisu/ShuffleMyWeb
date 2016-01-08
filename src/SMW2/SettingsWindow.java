@@ -1,10 +1,8 @@
 package SMW2;
 
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -18,6 +16,7 @@ public class SettingsWindow {
     ScrollPane top100;
     Label label2;
     TextField newWebPage;
+    Button button; // choicebox example
     Button addPage;
     Button deletePage;
     Button backButton;
@@ -34,11 +33,19 @@ public class SettingsWindow {
     private void SetupScene3() {
         stage.setTitle("Shuffle My Web");
 
+        
+        button = new Button("Click me");
+        ChoiceBox<String> choiceBox = new ChoiceBox<>();
+        choiceBox.getItems().addAll();
+        choiceBox.setValue("www.github.com/whiisu");
+        button.setOnAction(e -> getChoice(choiceBox));
+
+
         VBox vBox = new VBox(30);
         Scene scene = new Scene(vBox);
         vBox.setStyle("-fx-font: 22 arial");
         vBox.setPrefWidth(400);
-
+        vBox.setPadding(new Insets(20, 20, 20, 20));
         heading = new Text("Settings");
         //Database database = new Database();
         //int num = database.rowNumber();        //need to count number of web pages TODO
@@ -53,7 +60,7 @@ public class SettingsWindow {
         deletePage.setPrefSize(400, 60);
         backButton = new Button("Back to Start");
         backButton.setPrefSize(400, 60);
-        vBox.getChildren().addAll(heading, label, top100, label2, newWebPage, addPage,
+        vBox.getChildren().addAll(heading, label, button, choiceBox, top100, label2, newWebPage, addPage,
                 deletePage, backButton);
 
         stage.setScene(scene);
@@ -61,10 +68,15 @@ public class SettingsWindow {
 
     }
 
+    private void getChoice(ChoiceBox<String> choiceBox) {
+        String url = choiceBox.getValue();
+        System.out.println(url + "from the choice box");
+    }
+
     private void SetupTop100() {
         Database database = new Database();
         //top100.setContent(database.getData());
-        
+
     }
 
     private void DeletePage() { // meed to SetupTop100 first, TODO

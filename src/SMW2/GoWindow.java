@@ -1,5 +1,6 @@
 package SMW2;
 
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -27,9 +28,11 @@ public class GoWindow { // based on kristerv SQL_Login exercise
         stage.setTitle("Shuffle My Web");
 
         VBox vBox = new VBox(30);
-        Scene scene = new Scene(vBox);
+        Scene scene = new Scene(vBox, 450, 450);
+
         vBox.setStyle("-fx-font: 22 arial");
         vBox.setPrefSize(400, 400);
+        vBox.setPadding(new Insets(20, 20, 20, 20));
 
         intro = new Text("This program suggests you web pages");
         intro2 = new Text("First time start with Settings");

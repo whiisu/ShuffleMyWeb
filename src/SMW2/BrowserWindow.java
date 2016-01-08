@@ -2,7 +2,6 @@ package SMW2;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -17,7 +16,7 @@ import java.net.URISyntaxException;
  */
 public class BrowserWindow {
     Text intro2;
-    TextField webPage;
+    Text webPage;
     Button browserButton;
     Button nextWebPageButton;
     Button backButton;
@@ -36,12 +35,13 @@ public class BrowserWindow {
         Scene scene = new Scene(vBox);
         vBox.setStyle("-fx-font: 22 arial");
         vBox.setPrefWidth(400);
+        vBox.setPadding(new javafx.geometry.Insets(20, 20, 20, 20));
 
-        intro2 = new Text("Suggested web page to open");
+        intro2 = new Text("Suggested web page to open:");
         // Siin peaks veebiaadress olema, mis võetakse randomiga andmebaasist
         String firstURL = "http://www.github.com/whiisu";
-        webPage = new TextField(firstURL);
-        webPage.setPrefSize(400, 60);
+        webPage = new Text(firstURL);
+        //webPage.setPrefSize(400, 60);
         browserButton = new Button("Open the page"); //avab selle veebiaadressi, mis kuvatakse
         browserButton.setPrefSize(400, 60);
         nextWebPageButton = new Button("Next page"); // See nupuvajutus annab uue väärtuse browserButtonile ja URL kuvaväljale, random Database
@@ -71,10 +71,10 @@ public class BrowserWindow {
         nextWebPageButton.setOnAction(event -> {
             String url = "";
             Database database = new Database();
-            webPage = new TextField(database.randomURL(url));
+            webPage = new Text(database.randomURL(url));
             String url2 = webPage.getText();
             System.out.println("Active web page: " + url2);
-            webPage = new TextField(url2);
+            webPage = new Text(url2);
             // goes to database and picks random page which will show in webPage field
         });
     }
