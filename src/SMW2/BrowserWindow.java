@@ -61,9 +61,8 @@ public class BrowserWindow {
         nextWebPageButton.setOnAction(event -> {
             String url = "";
             Database database = new Database();
-            //HashMap urldata = database.getURL(url);
-            String urldata = database.randomURL(url);
-            webPage = new Text(urldata);
+            webPage = new Text(database.randomURL(url));
+            //webPage = new Text(urldata);
             // goes to database and picks random page which will show in webPage field
         });
     }
