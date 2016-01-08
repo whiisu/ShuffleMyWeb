@@ -37,7 +37,7 @@ public class SettingsWindow {
         heading = new Text("Settings");
         //Database database = new Database();
         //int num = database.rowNumber();        //need to count number of web pages TODO
-        label = new Label("Status: " + 12 + " web pages");
+        label = new Label("Status: " + 'x' + " web pages");
         top100 = new ScrollPane();
         newWebPage = new TextField();
         addPage = new Button("Add Page");

@@ -12,7 +12,7 @@ public class Database {
 
     public Database(){  // konstruktor
         createConnection(); //andmebaasiga ühenduse loomiseks
-        createTable(); //andmetabeli loomine
+        //createTable(); //andmetabeli loomine
     }
 
     private void createConnection() {
@@ -31,7 +31,9 @@ public class Database {
         // esmalt kontrolli, kas sellist aadressi pole juba ees! TODO
         String sql = "INSERT INTO DATABASE (URL) VALUES ('"+url+"');";
         updateDatabase(sql);
-        System.out.println("New url successfully added!");
+        //String sql2 = "SELECT COUNT(1) FROM DATABASE";
+        //ResultSet resultSet = statement.executeQuery(sql2);
+        System.out.println( url + " successfully added!");
     }
     private void updateDatabase(String sql) {
         try {
@@ -65,19 +67,21 @@ public class Database {
         }
         return urldata;
     }
-    public int rowNumber (){
+    /*public int rowNumber (){
         // based on http://stackoverflow.com/questions/13103067/correct-way-to-find-rowcount-in-java-jdbc
         try{
             statement = connection.createStatement();
             ResultSet r = statement.executeQuery("SELECT COUNT (*) AS rowcount FROM DATABASE");
             r.next();
-            int num = r.getInt("rowcount");
-            return num;
+            int rowNumber = r.getInt("rowcount");
+            return rowNumber;
         }catch (Exception e){
             e.printStackTrace();
+            System.exit(0);
         }
         return rowNumber();
     }
+    */
 
 
     public void closeConnection() { //closing database connection
@@ -87,6 +91,7 @@ public class Database {
             e.printStackTrace();
         }
         System.out.println("database connection closed");
+        System.out.println("----------");
     }
 
     public HashMap<String, String> getURL(String url) {

@@ -51,6 +51,7 @@ public class BrowserWindow {
             Desktop desktop = Desktop.getDesktop();
             try {
                 desktop.browse(new URI(url)); //opens current web page in browser
+                System.out.println("Opened web page: " + url);
             } catch (IOException | URISyntaxException e) {
                 e.printStackTrace();
             }
@@ -63,6 +64,7 @@ public class BrowserWindow {
             String url = "";
             Database database = new Database();
             webPage = new TextField(database.randomURL(url));
+            System.out.println("Active web page: " + url);
             //webPage = new Text(urldata);
             // goes to database and picks random page which will show in webPage field
         });
