@@ -29,7 +29,8 @@ public class BrowserWindow {
 
         // Siin peaks interaktiivne veebiaadress olema, mis võetakse randomiga andmebaasist
 
-        webPage = new TextField("http://www.github.com/whiisu");
+        String firstURL = "http://www.github.com/whiisu";
+        webPage = new TextField(firstURL);
         browserButton = new Button("Open the page"); //avab selle veebiaadressi, mis kuvatakse
         nextWebPageButton = new Button("Next page"); // See nupuvajutus annab uue väärtuse browserButtonile ja URL kuvaväljale, random Database
         backButton = new Button("Back to Start"); // läheb tagasi eelmisele lehele
@@ -39,16 +40,19 @@ public class BrowserWindow {
         stage.show();
     }
     private void SetupBrowser() {
-        browserButton.setOnAction(event -> { //PrposedURL
-            new ProposeURL();  //opens random web page in browser
+        browserButton.setOnAction(event -> { //FirstURL
+            new ProposeURL();  //opens current web page in browser
 
         });
     }
 
     private void SetupNextWebPage() {
         nextWebPageButton.setOnAction(event -> {
-            Database database = new Database();
-            database.randomURL();
+            String random = "";
+            Database database;
+            database = new Database();
+            database.randomURL(random);
+            webPage = new TextField(random);
 
 
             // goes to database and picks random page which will show in browserButton

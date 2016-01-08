@@ -6,7 +6,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 /**
- * Created by Kaia on 5.01.2016.
+ // Referring here to DevNami video in youtube
  */
 public class ProposeURL {
     public ProposeURL(){
@@ -17,9 +17,7 @@ public class ProposeURL {
         Desktop desktop = Desktop.getDesktop();
         try {
             desktop.browse(new URI("https://github.com/whiisu"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
+        } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
     }

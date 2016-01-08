@@ -26,7 +26,11 @@ public class Database {
         }
     }
     private void createTable() { //loon tabeli kahe tulbaga, kus hoitakse ID numbrit ja URL aadressi
-        String sql = "CREATE TABLE IF NOT EXISTS USERS (ID INT AUTO_INCREMENT, URL TEXT);";
+        String sql = "CREATE TABLE IF NOT EXISTS DATABASE (ID INT AUTO_INCREMENT, URL TEXT);";
+        updateDatabase(sql);
+    }
+    public void registerNewURL(String newURL) {
+        String sql = "INSERT INTO DATABASE (URL) VALUES ('\"+url+\\')";
         updateDatabase(sql);
     }
     private void updateDatabase(String sql) {
@@ -38,12 +42,7 @@ public class Database {
             e.printStackTrace();
         }
     }
-    public void registerNewURL(String newURL) {
-        String sql = "INSERT INTO USERS(URL) VALUES ('\"+url+\\')";
-        updateDatabase(sql);
-    }
-    public void randomURL() {
-        String randomURL;
+    public String randomURL(String randomURL) {
         try {
             createConnection();
             connection.setAutoCommit(false);
@@ -51,8 +50,7 @@ public class Database {
             ResultSet resultSet = statement.executeQuery("SELECT URL FROM DATABASE ORDER BY RANDOM() LIMIT 1;");
 
             while (resultSet.next()){
-                String url = resultSet.getString("url");
-                randomURL = url;
+                randomURL = resultSet.getString("url");
             }
             resultSet.close();
             statement.close();
@@ -60,7 +58,7 @@ public class Database {
         }catch (Exception e){
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         }
-
+        return randomURL;
     }
 
 
