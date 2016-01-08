@@ -12,7 +12,7 @@ public class Database {
 
     public Database(){  // konstruktor
         createConnection(); //andmebaasiga ühenduse loomiseks
-        //createTable(); //andmetabeli loomine
+        createTable(); //andmetabeli loomine
     }
 
     private void createConnection() {

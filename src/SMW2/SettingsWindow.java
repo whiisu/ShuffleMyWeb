@@ -16,6 +16,7 @@ public class SettingsWindow {
     Text heading;
     Label label;
     ScrollPane top100;
+    Label label2;
     TextField newWebPage;
     Button addPage;
     Button deletePage;
@@ -39,11 +40,12 @@ public class SettingsWindow {
         //int num = database.rowNumber();        //need to count number of web pages TODO
         label = new Label("Status: " + 'x' + " web pages");
         top100 = new ScrollPane();
+        label2 = new Label("Please copy FULL url here!");
         newWebPage = new TextField();
         addPage = new Button("Add Page");
         deletePage = new Button("Delete Page");
         backButton = new Button("Back to Start");
-        vBox.getChildren().addAll(heading, label, top100, newWebPage, addPage,
+        vBox.getChildren().addAll(heading, label, top100, label2, newWebPage, addPage,
                 deletePage, backButton);
 
         stage.setScene(scene);
@@ -65,17 +67,20 @@ public class SettingsWindow {
     }
 
     private void AddPage() {
-        addPage.setOnAction(event -> {
-            String url = newWebPage.getText();
-            Database database = new Database();
-            database.registerNewURL(url);
-            //database.rowNumber();
-            database.closeConnection();
-        });
+            addPage.setOnAction(event -> {
+                String url = newWebPage.getText();
+                Database database = new Database();
+                database.registerNewURL(url);
+                //database.rowNumber();
+                database.closeConnection();
+            });
+
+
+            //System.out.println("Textfield is empty!");
+        }
         //võtab newWebPage väljalt ULR-i ja salvestab selle andmebaasi
         // uuendab olemasolevate lehekülgede arvu ka
 
-    }
 
     private void SetupBackToStart() {
         backButton.setOnAction(event -> {

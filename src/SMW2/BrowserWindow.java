@@ -34,7 +34,7 @@ public class BrowserWindow {
         Scene scene = new Scene(vBox);
 
         intro2 = new Text("Suggested web page to open");
-        // Siin peaks interaktiivne veebiaadress olema, mis võetakse randomiga andmebaasist
+        // Siin peaks veebiaadress olema, mis võetakse randomiga andmebaasist
         String firstURL = "http://www.github.com/whiisu";
         webPage = new TextField(firstURL);
         browserButton = new Button("Open the page"); //avab selle veebiaadressi, mis kuvatakse
@@ -64,8 +64,9 @@ public class BrowserWindow {
             String url = "";
             Database database = new Database();
             webPage = new TextField(database.randomURL(url));
-            System.out.println("Active web page: " + url);
-            //webPage = new Text(urldata);
+            String url2 = webPage.getText();
+            System.out.println("Active web page: " + url2);
+            webPage = new TextField(url2);
             // goes to database and picks random page which will show in webPage field
         });
     }
