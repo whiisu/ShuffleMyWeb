@@ -32,8 +32,12 @@ public class SettingsWindow {
     }
 
     private void SetupScene3() {
-        VBox vBox = new VBox();
+        stage.setTitle("Shuffle My Web");
+
+        VBox vBox = new VBox(30);
         Scene scene = new Scene(vBox);
+        vBox.setStyle("-fx-font: 22 arial");
+        vBox.setPrefWidth(400);
 
         heading = new Text("Settings");
         //Database database = new Database();
@@ -42,9 +46,13 @@ public class SettingsWindow {
         top100 = new ScrollPane();
         label2 = new Label("Please copy FULL url here!");
         newWebPage = new TextField();
+        newWebPage.setPrefSize(400, 60);
         addPage = new Button("Add Page");
+        addPage.setPrefSize(400, 60);
         deletePage = new Button("Delete Page");
+        deletePage.setPrefSize(400, 60);
         backButton = new Button("Back to Start");
+        backButton.setPrefSize(400, 60);
         vBox.getChildren().addAll(heading, label, top100, label2, newWebPage, addPage,
                 deletePage, backButton);
 
@@ -56,10 +64,7 @@ public class SettingsWindow {
     private void SetupTop100() {
         Database database = new Database();
         //top100.setContent(database.getData());
-
-
-
-
+        
     }
 
     private void DeletePage() { // meed to SetupTop100 first, TODO

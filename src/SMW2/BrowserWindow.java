@@ -30,16 +30,24 @@ public class BrowserWindow {
         SetupBackToStart(); // goes back to start (Main)
     }
     private void SetupScene2() {
-        VBox vBox = new VBox();
+        stage.setTitle("Shuffle My Web");
+
+        VBox vBox = new VBox(30);
         Scene scene = new Scene(vBox);
+        vBox.setStyle("-fx-font: 22 arial");
+        vBox.setPrefWidth(400);
 
         intro2 = new Text("Suggested web page to open");
         // Siin peaks veebiaadress olema, mis võetakse randomiga andmebaasist
         String firstURL = "http://www.github.com/whiisu";
         webPage = new TextField(firstURL);
+        webPage.setPrefSize(400, 60);
         browserButton = new Button("Open the page"); //avab selle veebiaadressi, mis kuvatakse
+        browserButton.setPrefSize(400, 60);
         nextWebPageButton = new Button("Next page"); // See nupuvajutus annab uue väärtuse browserButtonile ja URL kuvaväljale, random Database
+        nextWebPageButton.setPrefSize(400, 60);
         backButton = new Button("Back to Start"); // läheb tagasi eelmisele lehele
+        backButton.setPrefSize(400, 60);
         vBox.getChildren().addAll(intro2, webPage, browserButton, nextWebPageButton, backButton);
 
         stage.setScene(scene);

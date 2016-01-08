@@ -10,7 +10,9 @@ import javafx.stage.Stage;
  * Created by Kaia on 8.01.2016.
  */
 public class GoWindow { // based on kristerv SQL_Login exercise
+
     Text intro;
+    Text intro2;
     Button goButton;
     Button settingsButton;
     Stage stage = new Stage();
@@ -22,13 +24,20 @@ public class GoWindow { // based on kristerv SQL_Login exercise
     }
 
     private void setupScene() {
-        VBox vBox = new VBox();
-        Scene scene = new Scene(vBox);
+        stage.setTitle("Shuffle My Web");
 
-        intro = new Text("This program suggests your favourite web pages in random order");
+        VBox vBox = new VBox(30);
+        Scene scene = new Scene(vBox);
+        vBox.setStyle("-fx-font: 22 arial");
+        vBox.setPrefSize(400, 400);
+
+        intro = new Text("This program suggests you web pages");
+        intro2 = new Text("First time start with Settings");
         goButton = new Button("GO");
+        goButton.setPrefSize(400, 60);
         settingsButton = new Button("Settings");
-        vBox.getChildren().addAll(intro, goButton, settingsButton);
+        settingsButton.setPrefSize(400, 60);
+        vBox.getChildren().addAll(intro, goButton, intro2, settingsButton);
 
         stage.setScene(scene);
         stage.show();
