@@ -32,7 +32,7 @@ https://docs.google.com/spreadsheets/d/1rFcfSU6n8YVXDd5au8DcIizzGbPF54zGFROgRg-w
 
 -------------------------------------
 
-#ARENDUS:
+ARENDUS:
 
 
 Esimene koosolek 6. oktoober 2015

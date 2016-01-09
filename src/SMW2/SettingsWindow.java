@@ -12,11 +12,9 @@ import javafx.stage.Stage;
  */
 public class SettingsWindow {
     Text heading;
-    Label label;
     ScrollPane top100;
     Label label2;
     TextField newWebPage;
-    Button button; // choicebox example
     Button addPage;
     Button deletePage;
     Button backButton;
@@ -32,24 +30,12 @@ public class SettingsWindow {
 
     private void SetupScene3() {
         stage.setTitle("Shuffle My Web");
-
-        
-        button = new Button("Click me");
-        ChoiceBox<String> choiceBox = new ChoiceBox<>();
-        choiceBox.getItems().addAll();
-        choiceBox.setValue("www.github.com/whiisu");
-        button.setOnAction(e -> getChoice(choiceBox));
-
-
         VBox vBox = new VBox(30);
         Scene scene = new Scene(vBox);
         vBox.setStyle("-fx-font: 22 arial");
         vBox.setPrefWidth(400);
         vBox.setPadding(new Insets(20, 20, 20, 20));
         heading = new Text("Settings");
-        //Database database = new Database();
-        //int num = database.rowNumber();        //need to count number of web pages TODO
-        label = new Label("Status: " + 'x' + " web pages");
         top100 = new ScrollPane();
         label2 = new Label("Please copy FULL url here!");
         newWebPage = new TextField();
@@ -60,17 +46,12 @@ public class SettingsWindow {
         deletePage.setPrefSize(400, 60);
         backButton = new Button("Back to Start");
         backButton.setPrefSize(400, 60);
-        vBox.getChildren().addAll(heading, label, button, choiceBox, top100, label2, newWebPage, addPage,
+        vBox.getChildren().addAll(heading, top100, label2, newWebPage, addPage,
                 deletePage, backButton);
 
         stage.setScene(scene);
         stage.show();
 
-    }
-
-    private void getChoice(ChoiceBox<String> choiceBox) {
-        String url = choiceBox.getValue();
-        System.out.println(url + "from the choice box");
     }
 
     private void SetupTop100() {
@@ -83,20 +64,15 @@ public class SettingsWindow {
 
     }
 
-    private void AddPage() {
+    private void AddPage() {    // saves new url to database
             addPage.setOnAction(event -> {
                 String url = newWebPage.getText();
                 Database database = new Database();
                 database.registerNewURL(url);
-                //database.rowNumber();
                 database.closeConnection();
             });
 
-
-            //System.out.println("Textfield is empty!");
         }
-        //võtab newWebPage väljalt ULR-i ja salvestab selle andmebaasi
-        // uuendab olemasolevate lehekülgede arvu ka
 
 
     private void SetupBackToStart() {

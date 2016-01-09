@@ -1,7 +1,6 @@
 package SMW2;
 
 import java.sql.*;
-import java.util.HashMap;
 
 /**
  * Created by Kaia on 8.01.2016.
@@ -44,15 +43,13 @@ public class Database {
             e.printStackTrace();
         }
     }
-
-
     public String randomURL(String urldata) {
         try {
             createConnection();
             connection.setAutoCommit(false);
             statement = connection.createStatement();
-            String sql = "SELECT URL FROM DATABASE ORDER BY RANDOM() LIMIT 1;";
-            ResultSet resultSet = statement.executeQuery(sql);
+            String sql3 = "SELECT URL FROM DATABASE ORDER BY RANDOM() LIMIT 1;";
+            ResultSet resultSet = statement.executeQuery(sql3);
 
             while (resultSet.next()){
                 urldata = resultSet.getString("url");
@@ -83,7 +80,6 @@ public class Database {
     }
     */
 
-
     public void closeConnection() { //closing database connection
         try {
             connection.close();
@@ -92,22 +88,5 @@ public class Database {
         }
         System.out.println("database connection closed");
         System.out.println("----------");
-    }
-
-    public HashMap<String, String> getURL(String url) {
-        HashMap<String, String> urldata = new HashMap<String, String>();
-        try{
-            Statement statement = connection.createStatement();
-            String sql = "SELECT URL FROM DATABASE ORDER BY RANDOM() LIMIT 1;";
-            ResultSet resultSet = statement.executeQuery(sql);
-            urldata.put("url", resultSet.getString("url"));
-            resultSet.close();
-            statement.close();
-            return urldata;
-        }catch (SQLException e){
-            e.printStackTrace();
-            System.exit(0);
-        }
-        return urldata;
     }
 }

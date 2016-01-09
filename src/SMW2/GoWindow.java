@@ -9,8 +9,9 @@ import javafx.stage.Stage;
 
 /**
  * Created by Kaia on 8.01.2016.
+ * based on kristerv SQL_Login exercise
  */
-public class GoWindow { // based on kristerv SQL_Login exercise
+public class GoWindow {
 
     Text intro;
     Text intro2;
@@ -27,11 +28,11 @@ public class GoWindow { // based on kristerv SQL_Login exercise
     private void setupScene() {
         stage.setTitle("Shuffle My Web");
 
-        VBox vBox = new VBox(30);
-        Scene scene = new Scene(vBox, 450, 450);
+        VBox vBox = new VBox(30); // space between objects
+        Scene scene = new Scene(vBox, 450, 450); // window size
 
-        vBox.setStyle("-fx-font: 22 arial");
-        vBox.setPrefSize(400, 400);
+        vBox.setStyle("-fx-font: 22 arial"); // font and size
+        vBox.setPrefSize(400, 400); //objects area size
         vBox.setPadding(new Insets(20, 20, 20, 20));
 
         intro = new Text("This program suggests you web pages");

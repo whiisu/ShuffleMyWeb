@@ -38,10 +38,8 @@ public class BrowserWindow {
         vBox.setPadding(new javafx.geometry.Insets(20, 20, 20, 20));
 
         intro2 = new Text("Suggested web page to open:");
-        // Siin peaks veebiaadress olema, mis võetakse randomiga andmebaasist
         String firstURL = "http://www.github.com/whiisu";
         webPage = new Text(firstURL);
-        //webPage.setPrefSize(400, 60);
         browserButton = new Button("Open the page"); //avab selle veebiaadressi, mis kuvatakse
         browserButton.setPrefSize(400, 60);
         nextWebPageButton = new Button("Next page"); // See nupuvajutus annab uue väärtuse browserButtonile ja URL kuvaväljale, random Database
