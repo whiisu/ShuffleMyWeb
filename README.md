@@ -10,13 +10,15 @@ ning võimaldab neid avada programmi poolt pakutud suvalises järjekorras.
 
 EST KASUTUSJUHEND:
 
+Käivita klass Main paketist SMW2.
+
 Peale esimest programmi käivitamist peaksid lisama oma lemmikaadressid arvutis või veebis.
-Seda saab teha "Settings" alt.
-Kindlasti tuleks lisada täielik url nimetus, et tagada parim tulemus.
+Seda saab teha "Settings" nupu alt.
+Kindlasti tuleks väljale kopeerida täielik url nimetus, et tagada parim tulemus.
 Kui lemmik-url-d on lisatud, siis saab minna tagasi algusesse "Back to Start" nupuga.
 
 Oma lemmikuid lehitsema pääseb nupust "GO".
-Pimesi on pakutud juba ka esimene aadress, ja kui see sobib siis ava see nupuga "Open the page".
+Vaikimisi on pakutud juba ka esimene aadress, ja kui see sobib siis ava see nupuga "Open the page".
 Kui pakutud aadress ei huvita, saab valida uue suvalise url-i vajutades nupule "Next page".
 Ka selle lehe saab avada "Open the page" nupust.
 Nupp "Back to Start" viib su tagasi programmi esilehele.
