@@ -36,6 +36,16 @@ https://docs.google.com/spreadsheets/d/1rFcfSU6n8YVXDd5au8DcIizzGbPF54zGFROgRg-w
 
 ARENDUS:
 
+Esialgne skeem on opendoc-s saadaval:
+https://docs.google.com/presentation/d/1Wt5yPYKkdu7Ni_VkmDYtRmFmBmq3_DCf96rx_61Yd9c/edit#slide=id.p
+PLaanitud UI:
+https://docs.google.com/presentation/d/1s2zZeWre-DWCFE9bCOsMEi8besGLz21FatPfxao716Q/edit#slide=id.ge345acc9b_2_75
+Esialgne algoritm:
+https://docs.google.com/presentation/d/1s2zZeWre-DWCFE9bCOsMEi8besGLz21FatPfxao716Q/edit#slide=id.ge345acc9b_2_75
+
+-----
+
+KROONIKA:
 
  Esimene koosolek 6. oktoober 2015
 Paik: Skype, Osalejad: Kaia Ernits, Andres Kostiv
@@ -52,7 +62,7 @@ Panime paika ülesannete jaotused
 Tulemus: plaan vormistatud onedrives ja esitatud Kristerile
 
 
- 10. oktoober 2015
+ Teine istung 10. oktoober 2015
 Paik: EIK   Osalejad: Kaia Ernits, Andres Kostiv
 1. Tutvumine IRL
 2. Prototyybi ylevaatus. Valmis ja esitatud 8.10.2015.
@@ -60,7 +70,7 @@ Paik: EIK   Osalejad: Kaia Ernits, Andres Kostiv
 Tulemus: prototyyp ja flowchart esitatud Kristerile 14.10.2015.
 
 
- 20. oktoober 2015
+ Kolmas kohtumine 20. oktoober 2015
 Paik: Antalya   Osalejad: Kaia Ernits, Andres Kostiv
 1. Programmijuppide jagamine.
 2. Algoritmi kirjutamine.
@@ -72,23 +82,23 @@ Paik: weeb,  Osaleja: Andres Kostiv
 Tulemus: Projekt "ShuffleMyWeb" on registreeritud.
 
 
- 03.11.2015
+ Neljas koosolek 03.11.2015
 Paik: Antalya   Osalejad: Kaia Ernits, Andres Kostiv
 Teemad:
 Olemasolevate andmete projekti gitti forkimine ja laadimine.
 
 
- 22.11.2015
+ Viimane kohtumine 22.11.2015
 Paik: EIK     Osalejad: Kaia Ernits, Andres Kostiv
 Otsustasime kogu projektist kumbki oma versiooni progeda.
 
 
- 23.11.2015
+ Registreeritud eraldi 23.11.2015
 Kaia regas oma repository Kristeri küsitluses.
 Hetkel on kaustas gitignore, readme ja programmi avaaken
 
 
- 09.01.2016 16:00
+ Lõpptähtaeg 09.01.2016 16:00
 Paik: EIK
 Projekti vastamine IRL
 
